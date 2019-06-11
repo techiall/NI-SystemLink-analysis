@@ -24,7 +24,7 @@ SystemLink API 文档就放在 GitHub，是官方自己开放的，链接如下�
 
 
 
-### SystemLink 数据库
+### 连接 SystemLink 数据库
 
 > 我们有了 API 文档，为啥还要找 SystemLink 的数据库呢，因为 API 返回的数据，绝大部分是我们不需要的；我们如果可以找到数据库，要是知道了数据库的结构，那我们可以通过数据库查询返回我们需要的数据即可。相比 API，可定制性更强。
 >
@@ -44,16 +44,27 @@ SystemLink 是无法选择安装位置的，因此安装位置应该不会有所
 
 进入 `C:\ProgramData\National Instruments\Skyline\NoSqlDatabase`  文件夹，mongo 的数据和配置都看到了。
 
-SystemLink 开放的 mongo 端口为 27018，密码和数据库文件存放位置都写在 `mongodb.conf` 中。使用 Mongodb GUI 连接测试，连接成功。
+---
 
+**SystemLink 开放的 mongo 端口为 27018，密码和数据库文件存放位置都写在 `mongodb.conf` 中。使用 Mongodb GUI 连接测试，连接成功。**
 
+---
 
 会到上一级目录，`C:\ProgramData\National Instruments\Skyline` 。这个目录就是 SystemLink 系统的配置目录。里面包括 证书，每个模块各自配置，redis，消息队列等等。
 
-在 `C:\ProgramData\National Instruments\Skyline\Config` 目录中，我们找到了 redis 数据库配置文件（KeyValueDatabase.json）。端口为 6378。使用 redis GUI 进行连接，连接成功。
+---
 
+**在 `C:\ProgramData\National Instruments\Skyline\Config` 目录中，我们找到了 redis 数据库配置文件（KeyValueDatabase.json）。端口为 6378。使用 redis GUI 进行连接，连接成功。**
 
+---
 
 拿到了数据库的权限，我们就可以根据 SystemLink 找到各个组件存放的数据库。从而可以写代码获得相关数据。
 
 排开 SystemLink 自身带的一些权限认证，SystemLink 最主要的就是 NI 硬件发送数据，用 tag 接收数据。
+
+
+
+
+
+### SystemLink 数据库分析
+
